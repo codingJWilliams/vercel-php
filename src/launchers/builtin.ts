@@ -15,7 +15,7 @@ let server: ChildProcess;
 async function startServer(entrypoint: string): Promise<ChildProcess> {
   // Resolve document root and router
   const router = entrypoint;
-  const docroot = getUserDir();
+  const docroot = process.env.NOW_CUSTOM_DOCROOT ? process.env.NOW_CUSTOM_DOCROOT : getUserDir();
 
   console.log(`🐘 Spawning: PHP Built-In Server at ${docroot} (document root) and ${router} (router)`);
 
