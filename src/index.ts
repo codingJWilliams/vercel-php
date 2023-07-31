@@ -126,7 +126,8 @@ export const build: BuildV3 = async ({
     runtime: 'nodejs18.x',
     environment: {
       NOW_ENTRYPOINT: entrypoint,
-      NOW_PHP_DEV: meta.isDev ? '1' : '0'
+      NOW_PHP_DEV: meta.isDev ? '1' : '0',
+      NOW_CUSTOM_DOCROOT: config.docRoot
     },
   });
 
